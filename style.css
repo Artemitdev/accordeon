@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500);
+
+body {
+	font-family: 'Fira Sans', sans-serif;
+}
+.container {
+	width: 500px;
+	height: 300px;
+	position: absolute;
+	margin: auto;
+	top: 10%;
+	left: 0;
+	right: 0;
+}
+.accordion__logo {
+	text-align: center;
+}
+.accordion__list {
+	padding: 0;
+	margin: 0;
+}
+.accordion__item {
+	width: 359px;
+	height: 42px;
+	font-size: 14px;
+	list-style-type: none;
+	margin: 5px auto 0;
+	padding-left: 15px;
+	line-height: 42px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	position: relative;
+	cursor: pointer;
+	z-index: 100;
+}
+
+.accordion__item.accordion__item_darkgray:before,
+.accordion__item.accordion__item_gray:before,
+.accordion__item.accordion__item_lightgray:before {
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 5px 0 5px;
+	border-color: #FF8663 transparent transparent transparent;
+	position: absolute;
+	margin: auto;
+	right: 15px;
+	top: 0;
+	bottom: 0;
+}
+.accordion__item_apricot {background: #FF8663; color: #fff;}
+// .accordion__item_darkgray {background: #E7E7E7;}
+.accordion__item_gray {background: #696666; color: #fff;}
+.accordion__item_lightgray {background: #F1F1F1;}
+
+.accordion__inside-list  {
+	display: none;
+	width: 374px;
+	padding: 0 0 10px;
+	margin: 0 auto;
+	position: relative;
+	top: -20px;
+	z-index: 90;
+}
+.accordion__inside-item {
+	list-style-type: none;
+	background: #E7E7E7;
+	padding: 3px 0;
+}
+.accordion__inside-item.first {
+	padding-top: 30px;
+}
+.accordion__inside-item.end {
+	padding-bottom: 10px;
+	-webkit-border-bottom-right-radius: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-moz-border-radius-bottomright: 20px;
+	-moz-border-radius-bottomleft: 20px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+.accordion__inside-link {
+	text-decoration: none;
+	font-weight: 400;
+
+	color: #4f4f4f;
+	padding-left: 15px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+
+// add class js-active
+.js-accordion {
+	background: #FF8663;
+}
+.accordion__item.accordion__item_gray.js-accordion:before,
+.accordion__item.accordion__item_lightgray.js-accordion:before
+{
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 5px 10px 5px;
+	border-color: transparent transparent #ffffff transparent;
+	position: absolute;
+	margin: auto;
+	right: 15px;
+	top: 0;
+	bottom: 0;
+}
+
+.js-accordion + .accordion__inside-list {
+	display: block;
+}
